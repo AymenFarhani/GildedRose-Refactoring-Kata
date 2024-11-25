@@ -8,23 +8,25 @@ class GildedRose{
     }
 
     public void updateQuality() {
+        QualityAdjuster qualityAdjuster = new QualityAdjuster();
+        SellInAdjuster sellInAdjuster = new SellInAdjuster();
         for (Item item : items) {
             ItemUpdateStrategy strategy;
             switch (item.name) {
                 case AGED_BRIE:
-                    strategy = new AgedBrieUpdateStrategy();
+                    strategy = new AgedBrieUpdateStrategy(qualityAdjuster, sellInAdjuster);
                     break;
                 case BACKSTAGE_PASS:
-                    strategy = new BackstagePassUpdateStrategy();
+                    strategy = new BackstagePassUpdateStrategy(qualityAdjuster, sellInAdjuster);
                     break;
                 case SULFURAS:
                     strategy = new SulfurasStrategy();
                     break;
                     case CONJURED:
-                        strategy = new ConjuredItemUpdateStrategy();
+                        strategy = new ConjuredItemUpdateStrategy(qualityAdjuster, sellInAdjuster);
                         break;
                 default:
-                    strategy = new NormalItemUpdateStrategy();
+                    strategy = new NormalItemUpdateStrategy(qualityAdjuster, sellInAdjuster);
                     break;
             }
 

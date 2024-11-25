@@ -2,15 +2,20 @@ package com.gildedrose;
 
 public class QualityAdjuster {
 
-    static void decreaseQuality(Item item) {
+    void initializeQuality(Item item){
+        if (item.sellIn < 0) {
+            item.quality = 0;
+        }
+    }
+    void decreaseQuality(Item item) {
         item.quality--;
     }
 
-    static void increaseQuality(Item item) {
+    void increaseQuality(Item item) {
         item.quality++;
     }
 
-    static void decreaseQualityBy2(Item item) {
+    void decreaseQualityBy2(Item item) {
         item.quality -=2;
     }
 }
