@@ -26,7 +26,7 @@ class BackstagePassUpdateStrategyTest {
 
         items[0].setSellIn(5);// Update sellIn to check another condition
         gildedRose.updateQuality();
-        assertEquals(24, items[0].getQuality()); // Quality should increase by another 2 (4 total)
+        assertEquals(25, items[0].getQuality()); // Quality should increase by another 2 (4 total)
         assertEquals(4, items[0].getSellIn());
     }
 

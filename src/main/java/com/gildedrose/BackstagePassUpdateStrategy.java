@@ -15,6 +15,9 @@ public class BackstagePassUpdateStrategy implements ItemUpdateStrategy {
         if (item.getSellIn() < 11) {
             qualityAdjuster.increaseQuality(item);
         }
+        if(item.getSellIn() < 6) {
+            qualityAdjuster.increaseQuality(item);
+        }
         sellInAdjuster.updateSellIn(item);
         qualityAdjuster.initializeQuality(item);
     }
