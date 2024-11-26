@@ -12,7 +12,7 @@ class GildedRose{
         SellInAdjuster sellInAdjuster = new SellInAdjuster();
         for (Item item : items) {
             ItemUpdateStrategy strategy;
-            switch (item.name) {
+            switch (item.getName()) {
                 case AGED_BRIE:
                     strategy = new AgedBrieUpdateStrategy(qualityAdjuster, sellInAdjuster);
                     break;

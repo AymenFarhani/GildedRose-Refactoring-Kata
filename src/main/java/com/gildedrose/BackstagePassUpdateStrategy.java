@@ -9,12 +9,12 @@ public class BackstagePassUpdateStrategy implements ItemUpdateStrategy {
     }
     @Override
     public void updateQuality(Item item) {
-        if (item.quality < 50) {
+        if (item.getQuality() < 50) {
             qualityAdjuster.increaseQuality(item);
-            if (item.sellIn < 11 && item.quality < 50) {
+            if (item.getSellIn() < 11 && item.getQuality() < 50) {
                 qualityAdjuster.increaseQuality(item);
             }
-            if (item.sellIn < 6 && item.quality < 50) {
+            if (item.getSellIn() < 6 && item.getQuality() < 50) {
                 qualityAdjuster.increaseQuality(item);
             }
         }

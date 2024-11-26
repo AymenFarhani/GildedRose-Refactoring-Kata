@@ -2,15 +2,40 @@ package com.gildedrose;
 
 public class Item {
 
-    public ItemName name;
+    private ItemName name;
 
-    public int sellIn;
+    private int sellIn;
 
-    public int quality;
+    private int quality;
 
     public Item(ItemName name, int sellIn, int quality) {
         this.name = name;
         this.sellIn = sellIn;
+        this.quality = quality;
+    }
+
+
+    public ItemName getName() {
+        return name;
+    }
+
+    public void setName(ItemName name) {
+        this.name = name;
+    }
+
+    public int getSellIn() {
+        return sellIn;
+    }
+
+    public void setSellIn(int sellIn) {
+        this.sellIn = sellIn;
+    }
+
+    public int getQuality() {
+        return quality;
+    }
+
+    public void setQuality(int quality) {
         this.quality = quality;
     }
 

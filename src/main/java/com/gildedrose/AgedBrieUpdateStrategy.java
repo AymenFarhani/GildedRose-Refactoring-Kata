@@ -9,12 +9,12 @@ public class AgedBrieUpdateStrategy implements ItemUpdateStrategy {
     }
     @Override
     public void updateQuality(Item item) {
-        if (item.quality < 50) {
+        if (item.getQuality() < 50) {
             qualityAdjuster.increaseQuality(item);
         }
         sellInAdjuster.updateSellIn(item);
 
-        if (item.sellIn < 0 && item.quality < 50) {
+        if (item.getSellIn() < 0 && item.getQuality() < 50) {
             qualityAdjuster.increaseQuality(item);
         }
     }

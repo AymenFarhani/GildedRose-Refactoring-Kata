@@ -9,12 +9,12 @@ public class ConjuredItemUpdateStrategy implements ItemUpdateStrategy {
     }
     @Override
     public void updateQuality(Item item) {
-        if (item.quality > 0) {
+        if (item.getQuality() > 0) {
             qualityAdjuster.decreaseQualityBy2(item);
         }
         sellInAdjuster.updateSellIn(item);
 
-        if (item.sellIn < 0 && item.quality > 0) {
+        if (item.getSellIn() < 0 && item.getQuality() > 0) {
             qualityAdjuster.decreaseQualityBy2(item);
         }
     }
