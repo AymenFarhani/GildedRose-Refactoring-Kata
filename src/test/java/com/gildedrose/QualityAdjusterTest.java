@@ -48,14 +48,14 @@ class QualityAdjusterTest {
     @Test
     void testDecreaseQualityDecreasesQualityByOne() {
         item.setQuality(5);
-        qualityAdjuster.decreaseQuality(item);
+        qualityAdjuster.decreaseQuality(item, 1);
         assertEquals(4, item.getQuality());
     }
 
     @Test
     void testDecreaseQualityWhenQualityIsZeroDoesNotDecreaseLessThanZero() {
         item.setQuality(0);
-        qualityAdjuster.decreaseQuality(item);
+        qualityAdjuster.decreaseQuality(item, 1);
         assertEquals(0, item.getQuality());
     }
 
@@ -88,7 +88,7 @@ class QualityAdjusterTest {
     @MethodSource("provideDecreaseQualityCases")
     void testDecreaseQualityBy2(int initialQuality, int expectedQuality) {
         item.setQuality(initialQuality);
-        qualityAdjuster.decreaseQualityBy2(item);
+        qualityAdjuster.decreaseQuality(item, 2);
         assertEquals(expectedQuality, item.getQuality());
     }
 

@@ -11,11 +11,11 @@ public class NormalItemUpdateStrategy implements ItemUpdateStrategy {
 
     @Override
     public void updateQuality(Item item) {
-        qualityAdjuster.decreaseQuality(item);
+        qualityAdjuster.decreaseQuality(item, 1);
         sellInAdjuster.updateSellIn(item);
 
         if (item.getSellIn() < 0) {
-            qualityAdjuster.decreaseQuality(item);
+            qualityAdjuster.decreaseQuality(item, 1);
         }
     }
 

@@ -10,9 +10,12 @@ public class QualityAdjuster {
         }
     }
 
-    void decreaseQuality(Item item) {
-        if (item.getQuality() > 0) {
-            item.setQuality(item.getQuality() - 1);
+    void decreaseQuality(Item item, int quantityToRemove) {
+        if (item.getQuality() <= quantityToRemove - 1) {
+            item.setQuality(0);
+        }
+        else if (item.getQuality() > quantityToRemove - 1) {
+            item.setQuality(item.getQuality() - quantityToRemove);
         }
     }
 
@@ -22,12 +25,4 @@ public class QualityAdjuster {
         }
     }
 
-    void decreaseQualityBy2(Item item) {
-        if(item.getQuality() <= 1 ) {
-            item.setQuality(0);
-        }
-        else if (item.getQuality() > 1) {
-            item.setQuality(item.getQuality() - 2);
-        }
-    }
 }
