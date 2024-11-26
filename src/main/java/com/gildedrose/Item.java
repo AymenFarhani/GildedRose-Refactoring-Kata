@@ -8,12 +8,16 @@ public class Item {
 
     private int quality;
 
+
+    public Item() {
+
+    }
+
     public Item(ItemName name, int sellIn, int quality) {
         this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;
     }
-
 
     public ItemName getName() {
         return name;

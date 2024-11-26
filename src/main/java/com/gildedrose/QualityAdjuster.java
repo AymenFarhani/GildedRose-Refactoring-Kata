@@ -9,14 +9,23 @@ public class QualityAdjuster {
     }
 
     void decreaseQuality(Item item) {
-        item.setQuality(item.getQuality() - 1);
+        if (item.getQuality() > 0) {
+            item.setQuality(item.getQuality() - 1);
+        }
     }
 
     void increaseQuality(Item item) {
-        item.setQuality(item.getQuality() + 1);
+        if (item.getQuality() < 50) {
+            item.setQuality(item.getQuality() + 1);
+        }
     }
 
     void decreaseQualityBy2(Item item) {
-        item.setQuality(item.getQuality() - 2);
+        if(item.getQuality() <= 1 ) {
+            item.setQuality(0);
+        }
+        else if (item.getQuality() > 1) {
+            item.setQuality(item.getQuality() - 2);
+        }
     }
 }

@@ -1,7 +1,9 @@
 package com.gildedrose;
 
+import java.util.regex.Pattern;
+
 public enum ItemName {
-    NORMAL(""),
+    NORMAL(Pattern.compile("@.*@(.+)").toString()),
     AGED_BRIE("Aged Brie"),
     BACKSTAGE_PASS("Backstage passes to a TAFKAL80ETC concert"),
     SULFURAS("Sulfuras, Hand of Ragnaros"),
