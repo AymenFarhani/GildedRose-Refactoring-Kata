@@ -2,6 +2,8 @@ package com.gildedrose;
 
 public class QualityAdjuster {
 
+    public static final int QUALITY_MAX = 50;
+
     void initializeQuality(Item item) {
         if (item.getSellIn() < 0) {
             item.setQuality(0);
@@ -15,7 +17,7 @@ public class QualityAdjuster {
     }
 
     void increaseQuality(Item item) {
-        if (item.getQuality() < 50) {
+        if (item.getQuality() < QUALITY_MAX) {
             item.setQuality(item.getQuality() + 1);
         }
     }
